@@ -1,0 +1,16 @@
+{
+  "fileExtensions": [".js"],
+
+  "esnext": true,
+
+  "validateQuoteMarks": "\"",
+  "validateIndentation": "\t",
+  "requireDotNotation": false,
+
+  "requireSemicolons": true,
+  "requireParenthesesAroundIIFE": true,
+  "maximumLineLength": 140,
+
+	"disallowQuotedKeysInObjects": false,
+	"requireTrailingComma": false
+}
