@@ -1,6 +1,7 @@
 var http = require("http");
 var request = require("request");
 var cheerio = require("cheerio");
+var moment = require("moment");
 
 function formatNumber(number) {
 	return parseFloat(number.replace(",", "."));
@@ -17,7 +18,7 @@ var server = http.createServer(function(req, res) {
 			var $this = $(this);
 			var estacao = {
 				"estacao": $this.find("td:nth-of-type(2)").text(),
-				"hora-da-leitura": $this.find("td:nth-of-type(3)").text(),
+				"hora-da-leitura": moment($this.find("td:nth-of-type(3)").text(), "hh:mm").format(),
 				"15-minutos": formatNumber($this.find("td:nth-of-type(4)").text()),
 				"1-hora": formatNumber($this.find("td:nth-of-type(5)").text()),
 				"4-horas": formatNumber($this.find("td:nth-of-type(6)").text()),
