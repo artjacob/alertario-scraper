@@ -8,7 +8,7 @@ function formatNumber(number) {
 }
 
 var server = http.createServer(function(req, res) {
-	res.writeHead(200, { "content-type": "application/json" });
+	res.writeHead(200, { "content-type": "application/json; charset=utf-8;" });
 
 	var chuva = [ ];
 	request({ "uri": "http://alertario.rio.rj.gov.br/upload/TempoReal.html" }, function(error, response, body) {
